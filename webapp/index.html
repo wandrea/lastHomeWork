@@ -1,0 +1,64 @@
+<!doctype html>
+<html ng-app='bookApp' Lang="hu">
+
+<head>
+
+    <meta charset="utf-8">
+    <title>Book shop</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-route.js"></script>
+
+    <script src="app.js"></script>
+    <script src="home/home-controller.js"></script>
+    <script src="book/book-controller.js"></script>
+    <script src="book/book-service.js"></script>
+    <script src="book/book-create-controller.js"></script>
+    <script src="book/book-edit-controller.js"></script>
+</head>
+
+<body class="container" id="bodybackground">
+    <div class="row">
+        <div class="col-sm-12 jumbotron" id='jumbotron'>
+            <div class="col-sm-5">
+                <h2>Welcome Bookshop!</h2>
+            </div>
+            <div class="col-sm-4"></div>
+            <div class="col-sm-3">
+                <img id="logo" src="https://i.pinimg.com/736x/76/bf/71/76bf71235a7e04cf10c464126b2a9f22--cat-logo-black-cats.jpg">
+
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-sm-2" id="menu">
+            <ul class="nav nav-stacked">
+                <li>
+                    <a href="#!">Home</a>
+                </li>
+                <li>
+                    <a href="#!/book">Books</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-sm-1">
+
+        </div>
+        <div class="col-sm-9" id="content">
+
+
+            <ng-view>
+
+
+            </ng-view>
+
+        </div>
+
+    </div>
+</body>
+
+</html>

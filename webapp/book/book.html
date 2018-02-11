@@ -1,0 +1,47 @@
+<div ng-controller="bookController" ng-init="init()">
+
+    <h3>Shop</h3>
+
+    <a class="btn btn-success" href="#!/book/create">
+        <span class="glyphicon glyphicon-plus"></span>
+        Create
+    </a>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Book title</th>
+                <th>ISBN</th>
+                <th>Edit</th>
+                <th>Delete</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="book in books">
+
+                <td>{{book.id}}</td>
+                <td>{{book.name}}</td>
+                <td>{{book.isbn}}</td>
+
+                <td>
+                    <button class="btn btn-warning" ng-click="updateBook(book.id)">
+                        <span class="glyphicon glyphicon-edit"></span>
+                    </button>
+                </td>
+                <td>
+                    <button class="btn btn-danger" ng-click="removeBook(book)">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+
+
+
+</div>

@@ -1,0 +1,45 @@
+
+
+#bodybackground{
+
+        background-image: url("https://pre00.deviantart.net/fb76/th/pre/i/2013/044/8/2/cat_shapes___background_by_lalunatique-d5f93yf.jpg");
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+}
+
+#menu{
+    background-color:azure;
+}
+
+#logo {
+    height: 150px;
+
+}
+#content {
+    background-color:azure;
+}
+
+.pstyle {
+font-size:15px;
+}
+
+.imagetitle {
+    text-align: center;
+}
+
+
+div.header,
+div.footer {
+    padding: 1em;
+    color: darkslategrey;
+    background-color:cadetblue;
+}
+div.header {
+    text-align: center;}
+div.footer {
+    text-align: right;
+    font-size: 20px;
+}

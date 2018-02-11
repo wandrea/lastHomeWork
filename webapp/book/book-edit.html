@@ -1,0 +1,23 @@
+<div ng-controller="bookEditController" ng-init='init()'>
+    
+        <div class="form-group ">
+            <label>Book title</label>
+            <input class="form-control" ng-model="book.name">
+
+        </div>
+        <div class="form-group">
+           <label>ISBN Number</label>
+                <input class="form-control" ng-model="book.isbn">
+
+        </div>
+        <a class="btn btn-success" ng-click="updateBook()">
+            <span class="glyphicon glyphicon-saved"></span>
+            Update
+        </a>
+        <a class="btn btn-warning" href="#!/book">
+            <span class="glyphicon glyphicon-backward"></span>
+            Back
+        </a>
+
+    
+</div>
