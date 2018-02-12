@@ -1,10 +1,9 @@
 package hu.helixlab.spring.Domain;
 
 import javax.annotation.Generated;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Book {
@@ -14,6 +13,26 @@ public class Book {
     private String name;
     private String isbn;
 
+
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Set<Category> categories= new HashSet<>();
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "book_auditor", joinColumns = @JoinColumn(name = "book_id"), inverseJoinColumns = @JoinColumn(name = "auditor_id"))
+    private Set<Auditor> auditors =new HashSet<>();
+
+
+    public Book addCategory(Category category){
+        this.categories.add(category);
+        return this;
+    }
+
+
+    public  Book addAuditor (Auditor auditor){
+        this.auditors.add(auditor);
+        return this;
+    }
     public Integer getId() {
         return id;
     }
