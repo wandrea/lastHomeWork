@@ -12,9 +12,12 @@ import java.util.List;
 
 @Service
 public class BookService {
-    @Autowired
+
+    //autowired springnek hgoy a bookrepot példányosítom,így használhatóak a példány metódusai, másik megoldás a construktorral példányosítani
+  @Autowired
     private BookRepository bookRepository;
 
+    //bookrepo metódusai findOn, save, delete stb, id alapján keresünk törlünk, mentésnél egész book obj. mentjük
     public Book findById(int id) {
         return bookRepository.findOne(id);
 
@@ -25,6 +28,7 @@ public class BookService {
     }
 
     public Book getTestBook() {
+        //egy új book obj léterhozása
 
         Book book = new Book();
         book.setId(10);
@@ -39,6 +43,9 @@ public class BookService {
 
     }
 
+
+    //kell id ami alapján kikeressük az obj és egy book amiben vannak a bekért módosított adatok
+    //lokális változóba oldbook megkeressük az adott id-jű obj, majd setterekkel beállítjuk az új adatokat és lementjük
     public Book updateBookById (int id, Book newBook){
         Book oldBook= bookRepository.findOne(id);
 
@@ -48,11 +55,9 @@ public class BookService {
     }
 
 
-   // find all listát a bookokból ad vissza
-    //angularos alkalmazás amivel meghívom ezeket a req és responzokat
-    //az angular nem futhat akkor a 8080-on
-    //cross origin resource--megoldás requestcontrollernél @CrossOrigini(origins="http://localhost:7323" rárakni minden egyes kérésre
-
+   //összes obj lekérése egy listába, egyik megoldás ez a lista létrehozása és fooral végigmennia bookrepo.findAll-ból kapott collection
+    //és add metódussal belepakoljuk a listába egyesével a bookokat
+    //másik hogy egy iterable az eredmény, a findAll visszatérési értéke, implementálva a CategoryService-be
     public List<Book> findAll () {
         List<Book> all = new ArrayList<>();
         for (Book book : bookRepository.findAll()) {

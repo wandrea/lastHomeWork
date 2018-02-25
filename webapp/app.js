@@ -1,13 +1,18 @@
 angular.module('bookApp', ["ngRoute"]);
-
-angular.module('bookApp')
-.config(
+//az app nevét meg hogy ngRoute-az útvonalt
+angular.module('bookApp').config(
+    //routProviderrel az elérését, mikor melyik html és hozzá tartozó controllert
+    //locationProviderrel hogy melyik módba menjen html5 vagy sem
     function ($routeProvider, $locationProvider) {
         $routeProvider
             .when('/', {
                 templateUrl: 'home/home.html',
                 controller: 'homeController',
+                //whenbe az elérési útvonal a routeprovidea alapján dönti el mire cserélgessen az ng-view-ba a singlePageAppunk
+                //templateUrlbe a relatív elérését a html filenak, controllerbe a controller nevét
+                //további infok a book cuccaiban
             })
+
             .when('/book', {
                 templateUrl: 'book/book.html',
                 controller: 'bookController',

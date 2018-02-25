@@ -23,6 +23,7 @@ public class Auditor {
     @Email
     private String email;
 
+    //ez van összekapcsolva a book-kal, itt a book set-be rakja bele ami össze van kapcsolva a mappedBy-jal
    @ManyToMany(mappedBy = "auditors")
     private Set<Book> books = new HashSet<>();
 

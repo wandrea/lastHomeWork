@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 import java.util.UUID;
 @Component
 public class Bootstrap implements ApplicationListener<ContextRefreshedEvent> {
+//applicationListener interface-t használja, a contextRefreshedEvent az az alkalmazás elindulásakor csinál valamit, jelen esetben lefutatja az init()-t.
 
     @Autowired
     private BookRepository bookRepository;
@@ -22,7 +23,8 @@ public class Bootstrap implements ApplicationListener<ContextRefreshedEvent> {
         init();
 
     }
-
+//inittel egy kezdeti feltöltést csinál egy book objektumot beállít, menti, de beállítja az auditort, categorit is és a cascade type miatt
+    //beállítja azokat is ekkor.
     private void init() {
         Book book = new Book();
         book.setIsbn(String.valueOf(UUID.randomUUID()));
